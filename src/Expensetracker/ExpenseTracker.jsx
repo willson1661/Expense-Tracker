@@ -87,7 +87,7 @@ const ExpenseTracker = () => {
           {expenses.map((expense) => (
             <div class="card-container" key={expense.id}>
               <h3>{expense.description}</h3>
-              <p>Amount - Rs.{parseFloat(expense.amount).toFixed(2)}</p>
+              <p>Amount - Rs.{expense.amount}</p>
               <span className="aa" onClick={() => handleDel(expense.id)}>
                 <FaTrash className="icons" />
               </span>
