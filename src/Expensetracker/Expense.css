@@ -44,11 +44,11 @@ h1,h2{
 }
 
 .a3 {
-
     align-items: center;
     display: flex;
     place-content: center;
 
+    padding: 45px;
 }
 
 
