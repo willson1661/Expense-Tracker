@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { FaTrash, FaCheckCircle, FaEdit } from "react-icons/fa";
 
+import "./Expense.css";
 const ExpenseTracker = () => {
   const saveditems = JSON.parse(localStorage.getItem("expenses"));
   const saveditemsinput = JSON.parse(localStorage.getItem("newExpense"));
@@ -59,15 +61,16 @@ const ExpenseTracker = () => {
   return (
     <div>
       <h1>Expense Tracker</h1>
-      <div>
-        <input
+
+      <div className="expense_main">
+        <textarea
           type="text"
           name="description"
           placeholder="Description"
           value={newExpense.description}
           onChange={handleInputChange}
         />
-        <input
+        <textarea
           type="number"
           placeholder="Amount"
           value={newExpense.amount}
@@ -75,19 +78,25 @@ const ExpenseTracker = () => {
           name="amount"
           id="amount"
         />
-        <button onClick={addExpense}>Add Expense</button>
+        <button className="a2" onClick={addExpense}>
+          Add Expense
+        </button>
       </div>
-      <div>
-        <h2>Expenses</h2>
-        <ul>
+      <div className="a3">
+        <div className="a4">
           {expenses.map((expense) => (
-            <li key={expense.id}>
-              {expense.description}: Rs.
-              {parseFloat(expense.amount).toFixed(2)}
-              <button onClick={() => handleDel(expense.id)}>Del</button>
-            </li>
+            <div class="card-container" key={expense.id}>
+              <h3>{expense.description}</h3>
+              <p>Amount - Rs.{parseFloat(expense.amount).toFixed(2)}</p>
+              <span className="aa" onClick={() => handleDel(expense.id)}>
+                <FaTrash className="icons" />
+              </span>
+              <span className="aab">
+                <FaEdit className="icons" />
+              </span>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
