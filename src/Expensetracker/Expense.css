@@ -168,3 +168,16 @@ h3 {
 
 
 
+@media (max-width:500px){
+.card-container {
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 20px 10px 0 #c2bdbd;
+        height: 235px;
+        margin: auto auto 30px;
+        padding: 10px 20px;
+        position: relative;
+        top: 67px;
+        width: 238px;
+    }
+}
